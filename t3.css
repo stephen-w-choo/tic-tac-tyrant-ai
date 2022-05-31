@@ -1,0 +1,14 @@
+.box {
+    height: 150px;
+    width: 150px;
+    background-color: blue;
+
+}
+
+#game-area {
+    margin: 0 auto;
+    width: 450px;
+    display:grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+}
