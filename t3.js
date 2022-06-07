@@ -5,13 +5,13 @@ let initGame = (firstPlayer, secondPlayer) => {
     let currentTurn = 0
     
     function createBoard() {
-        i = 0
-        gameArea = document.getElementById("game-area")
+        let i = 0
+        let gameArea = document.getElementById("game-area")
         gameArea.innerHTML = ""
-        for (line of gameState){
-            row = document.createElement("div") 
-            for (j in line) {
-                cell = document.createElement("div")
+        for (let line of gameState){
+            let row = document.createElement("div") 
+            for (let j in line) {
+                let cell = document.createElement("div")
                 cell.classList.add("box")
                 cell.id = `${i}${j}`
                 cell.addEventListener("click", () => {
@@ -111,7 +111,7 @@ let Player = (name, turn, marker) => { //X will be assigned as 1, O will be assi
 document.getElementById("start").addEventListener("click", () =>{
     let firstPlayer = Player("Stephen", 1, "X")
     let secondPlayer = Player("Computer", 2, "O") 
-    Gameboard = initGame(firstPlayer, secondPlayer)
+    let Gameboard = initGame(firstPlayer, secondPlayer)
     Gameboard.createBoard()
 })
 
