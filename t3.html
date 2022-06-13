@@ -8,43 +8,37 @@
     <link rel="stylesheet" href="t3.css">
 </head>
 <body>
-    <div class="player">
-        <p>
-        Player name
-        <input type="text" id="p1-name" placeholder="name">
-        </p>
-        <p>
-            Choose your icon
-        </p>
-        <p>
-            X<input type="radio" name="p1-icon" value = "X">
-            O<input type="radio" name="p1-icon" value = "O">
-        <p>
-            Going first
-            <input type="radio" name="turn"id="p1">
-        </p>
-    </div>
 
-    <div class="player">
-        <p>
-        Player name
-        <input type="text" id="p1-name" placeholder="name">
-        </p>
-        <p>
-            X<input type="radio" name="p2-icon" value = "X">
-            O<input type="radio" name="p2-icon" value = "O">
-        <p>
-        <p>
-            Going first
-            <input type="radio" name="turn" id="p2">
-        </p>
-    </div>
-    <button id="start">Start</button>
 
-    <div id="game-area">
+    
+    <div id="square">
+        <div id="outcome-overlay">
+            <button id = "to-menu">Play again</button>
+        </div>
+        <div id="game-menu">
+            <div id="first">
+                <div>
+                    X
+                </div>
+                <div>
+                    Go first
+                </div>
+            </div>
+        
+            <div id="second">
+                <div>
+                    O
+                </div>
+                <div>
+                    Go second
+                </div>
+            </div>
+        </div>
+        <div id = "game-area">
 
+        </div>
     </div>
-    <script src="t3.js" type="module"></script>
+    <script src="tictactoe-rewrite.js"></script>
     changed
 </body>
 </html>
