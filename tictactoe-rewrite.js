@@ -139,7 +139,6 @@ class tyrantAI extends Gamelogic {
             }
             return(v)
         }
-        
 
         const currentPlayer = this.checkTurn(state)
         let possible_actions = []
@@ -190,15 +189,12 @@ class Gameboard {
     }
 
     showOverlay(text) {
-        overlay = document.getElementById("outcome-overlay")
-        overlay.style.display("block")
-        overlay.innerText(text)
+        document.getElementById("outcome-overlay").style.display = "block"
+        document.querySelector("#outcome-overlay>*>p").innerText = text
     }
 
     hideOverlay() {
-        overlay = document.getElementById("outcome-overlay")
-        overlay.style.display("none")
-        overlay.innerText("")
+        document.getElementById("outcome-overlay").style.display = "none"
     }
 
     resetBoard(){
@@ -233,8 +229,11 @@ class Gameboard {
         if (outcome*Game.human == 1) {
             this.showOverlay("You win")
         }
-        else {
+        else if (outcome*Game.human == -1) {
             this.showOverlay("You lose")
+        }
+        else {
+            this.showOverlay("Draw")
         }
     }
 
@@ -250,23 +249,21 @@ class Gameboard {
                     if (Game.gameState[i][j] == null){
                         this.makeMove(`${i}${j}`)
                         let outcome = Game.checkWinner(Game.gameState, `${i}${j}`)
-                        if (outcome) {
+                        if (outcome != null) {
                             this.endGame(outcome)
                         }
                         else {
                             let aiMove = tyrant.minimax(Game.gameState)
                             this.makeMove(aiMove)
                             let outcome = Game.checkWinner(Game.gameState, aiMove)
-                            if (outcome) {
+                            if (outcome != null) {
                             this.endGame(outcome)
                             }
                         }
                     }
                 })
                 gameArea.appendChild(cell)
-            }  
-        }
-    }
+    }}}
 }
 
 const Board = new Gameboard()
@@ -277,4 +274,18 @@ document.getElementById("first").addEventListener("click", ()=>{
     Game.resetGameLogic()
     Board.resetBoard()
     Board.showBoard()
+})
+
+document.getElementById("second").addEventListener("click", ()=>{
+    Game.human = -1
+    Game.resetGameLogic()
+    Board.resetBoard()
+    Board.showBoard()
+    const moves = ["00", "02", "20", "22"]
+    Board.makeMove(moves[Math.floor(Math.random()*5)])
+})
+
+document.getElementById("replay").addEventListener("click", ()=>{
+    Board.showMenu()
+    
 })

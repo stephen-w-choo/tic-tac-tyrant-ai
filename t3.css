@@ -16,6 +16,16 @@ body {
     text-shadow: 0 0 5px #C8C8C8;
   }
 
+#scanline-overlay {
+    background: repeating-linear-gradient(transparent, transparent 2px, black 3px, black 3px);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; 
+}
+
 #square {
     margin: 0 auto;
     width: 450px;
@@ -30,21 +40,25 @@ body {
     width: 450px;
     position: absolute;
     z-index: 1;
-    background-color: black;
-    opacity: 0.5;
+    background-color:rgba(0,0,0,0.5);
+}
+
+#outcome-overlay > * {
+    margin: 0 auto;
+    text-align: center;
 }
 
 #game-menu {
     margin: 0 auto;
+    height: 100%;
     width: 450px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center
 }
 
-.menu-button {
-    display: flex;
-    font-size: 20px;
+#game-menu>*>* {
+    text-align: center;
 }
 
 
