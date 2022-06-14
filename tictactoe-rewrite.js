@@ -282,10 +282,9 @@ document.getElementById("second").addEventListener("click", ()=>{
     Board.resetBoard()
     Board.showBoard()
     const moves = ["00", "02", "20", "22"]
-    Board.makeMove(moves[Math.floor(Math.random()*5)])
+    Board.makeMove(moves[Math.floor(Math.random()*4)])
 })
 
 document.getElementById("replay").addEventListener("click", ()=>{
     Board.showMenu()
-    
 })

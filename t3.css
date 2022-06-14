@@ -32,6 +32,7 @@ body {
     height: 450px;
     border-style: solid;
     border-width: 1px;
+    box-shadow: 0 0 5px #C8C8C8;
 }
 
 #outcome-overlay {
@@ -55,6 +56,19 @@ body {
     display: flex;
     justify-content: space-evenly;
     align-items: center
+}
+
+#game-menu>* {
+    background-color:rgba(0,0,0,0.5);
+    padding: 20px;
+}
+
+#game-menu>*>p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 120px;
+    font-weight: 100;
+    padding:0px;
+    margin: 0px;
 }
 
 #game-menu>*>* {
