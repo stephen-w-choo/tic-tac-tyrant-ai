@@ -1,0 +1,47 @@
+[33mcommit 33b3ffe782166498352d8efee2bf8f23790c6038[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: stephen.w.choo@gmail.com <stephen.w.choo@gmail.com>
+Date:   Wed Jun 15 14:03:06 2022 +1000
+
+    Basic typewriter effect added as a new class. Will add more voiceliens and ASCII animations later
+
+[33mcommit 52811bcedabbd20c386dc7989fe62c523520aa2c[m
+Author: stephen-w-choo <stephen.w.choo@gmail.com>
+Date:   Wed Jun 15 09:45:13 2022 +1000
+
+    Added ASCII art
+
+[33mcommit fb52c4f548881dd2d9f60b712159f11699ba5114[m
+Author: stephen.w.choo@gmail.com <stephen.w.choo@gmail.com>
+Date:   Tue Jun 14 19:40:04 2022 +1000
+
+    Updated
+
+[33mcommit 5d41c832b3c72873daa05189c7f02e131571765f[m
+Author: stephen.w.choo@gmail.com <stephen.w.choo@gmail.com>
+Date:   Tue Jun 14 11:47:51 2022 +1000
+
+    Functionality and UI all complete and working. Will add ASCII art and animations next
+
+[33mcommit 7093a575e70d798f8b0a0b30d4615723ca970a6b[m
+Author: stephen-w-choo <stephen.w.choo@gmail.com>
+Date:   Tue Jun 14 09:44:05 2022 +1000
+
+    interface mostly functional - next step will be to finalise interface
+
+[33mcommit de3794779886469ddbfd0864b62b432b461973f0[m
+Author: stephen-w-choo <stephen.w.choo@gmail.com>
+Date:   Wed Jun 8 22:35:03 2022 +1000
+
+    Did not properly save before committing - this commit should have the latest version
+
+[33mcommit faaca622021c913494c6bedbc9714f2d1594a89e[m
+Author: stephen-w-choo <stephen.w.choo@gmail.com>
+Date:   Wed Jun 8 09:58:19 2022 +1000
+
+    basic functions complete, need to put it all together
+
+[33mcommit 8c191d050211f0f4c106487d4d7379d09f8c99f1[m
+Author: stephen-w-choo <stephen.w.choo@gmail.com>
+Date:   Tue May 31 10:09:25 2022 +1000
+
+    commit

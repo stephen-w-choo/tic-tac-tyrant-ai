@@ -19,6 +19,8 @@ body {
 pre {
     font-size: 6.5px;
     text-align: center;
+    display:inline;
+    line-height: 0px;
 }
 
 #scanline-overlay {
