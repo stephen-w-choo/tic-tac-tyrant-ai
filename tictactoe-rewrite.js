@@ -266,9 +266,48 @@ class Gameboard {
     }}}
 }
 
+class TyrantSpeech {
+    // controls all the voicelines of the AI
+    menulines = 
+    ["Pick a side, human.",
+    "First or second? Make your choice.",
+    "I'll let you choose your turn. You're not winning anyway."
+    ]
+    
+    speak(textstring) {
+        //takes a string and outputs it to the chatbox with a typewriter effect
+        let chatbox = document.getElementById("voice")
+        chatbox.innerHTML = ""
+        function addLetters(){
+            chatbox.innerHTML += textstring[i]
+            i++
+            if (i>= textstring.length) {
+                clearInterval(speaking)
+            }
+        }
+        let i = 0
+        let speaking = setInterval(addLetters, 50)
+    }
+
+    menuSpeak() {
+        let menulines = 
+        ["Pick a side, human.",
+        "First or second? Make your choice.",
+        "I'll let you choose your turn. You're not winning anyway."
+        ]
+        let random_line = menulines[parseInt(Math.random()*menulines.length)]
+        this.speak(random_line)
+    }
+
+    drawlines() {
+        lines = 
+        []
+    }
+}
+
 const Board = new Gameboard()
 Board.createBoard()
-
+voicebox = new TyrantSpeech
 document.getElementById("first").addEventListener("click", ()=>{
     Game.human = 1
     Game.resetGameLogic()
@@ -287,4 +326,5 @@ document.getElementById("second").addEventListener("click", ()=>{
 
 document.getElementById("replay").addEventListener("click", ()=>{
     Board.showMenu()
+    voicebox.menuSpeak()
 })

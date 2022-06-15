@@ -17,7 +17,7 @@ body {
   }
 
 pre {
-    font-size: 5px;
+    font-size: 6.5px;
     text-align: center;
 }
 
@@ -31,6 +31,17 @@ pre {
     pointer-events: none; 
 }
 
+#chatbox {
+    width: 450px;
+    height: 50px;
+    margin: 0 auto;
+    background-color:rgba(0,0,0,0.5);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
 #square {
     margin: 0 auto;
     width: 450px;
@@ -42,8 +53,8 @@ pre {
 
 #outcome-overlay {
     display: none;
-    height: 100%;
-    width: 100%;
+    height: 450px;
+    width: 450px;
     position: absolute;
     z-index: 1;
     background-color:rgba(0,0,0,0.5);
