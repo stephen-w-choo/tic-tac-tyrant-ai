@@ -17,10 +17,8 @@ body {
   }
 
 pre {
-    font-size: 6.5px;
+    font-size: 4.5px;
     text-align: center;
-    display:inline;
-    line-height: 0px;
 }
 
 #scanline-overlay {
@@ -35,7 +33,6 @@ pre {
 
 #chatbox {
     width: 450px;
-    height: 50px;
     margin: 0 auto;
     background-color:rgba(0,0,0,0.5);
     margin-top: 20px;
