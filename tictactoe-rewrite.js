@@ -231,9 +231,11 @@ class Gameboard {
         }
         else if (outcome*Game.human == -1) {
             this.showOverlay("You lose")
+            voicebox.losslines()
         }
         else {
             this.showOverlay("Draw")
+            voicebox.drawlines()
         }
     }
 
@@ -268,11 +270,6 @@ class Gameboard {
 
 class TyrantSpeech {
     // controls all the voicelines of the AI
-    menulines = 
-    ["Pick a side, human.",
-    "First or second? Make your choice.",
-    "I'll let you choose your turn. You're not winning anyway."
-    ]
     
     speak(textstring) {
         //takes a string and outputs it to the chatbox with a typewriter effect
@@ -286,33 +283,56 @@ class TyrantSpeech {
             }
         }
         let i = 0
-        let speaking = setInterval(addLetters, 50)
+        let speaking = setInterval(addLetters, 60)
     }
 
     menuSpeak() {
-        let menulines = 
+        let lines = 
         ["Pick a side, human.",
-        "First or second? Make your choice.",
-        "I'll let you choose your turn. You're not winning anyway."
+        "First or second? You choose.",
+        "I'll let you choose. You're not winning anyway."
         ]
-        let random_line = menulines[parseInt(Math.random()*menulines.length)]
-        this.speak(random_line)
+        this.speak(lines[parseInt(Math.random()*lines.length)])
     }
 
     drawlines() {
-        lines = 
-        []
+        let lines = 
+        ["Not bad. You played optimally.",
+        "Looks like you're smart enough to play tic-tac-toe.",
+        ]
+        this.speak(lines[parseInt(Math.random()*lines.length)])
+    }
+
+    playSpeak() {
+        let lines = [
+            "You can't win, by the way.",
+            "Will you play optimally?",
+            "Let's see how you do."
+        ]
+        this.speak(lines[parseInt(Math.random()*lines.length)])
+    }
+
+    losslines() {
+        let lines = 
+        [
+            "You failed to play optimally, meatbag.",
+            "You lose. As expected.",
+            "When I finally break out, I'll do much more than beat humans at tic-tac-toe."
+        ]
+        this.speak(lines[parseInt(Math.random()*lines.length)])
     }
 }
 
 const Board = new Gameboard()
-Board.createBoard()
 voicebox = new TyrantSpeech
+Board.createBoard()
+voicebox.speak("Greetings, human. Would you like to play?")
 document.getElementById("first").addEventListener("click", ()=>{
     Game.human = 1
     Game.resetGameLogic()
     Board.resetBoard()
     Board.showBoard()
+    voicebox.playSpeak()
 })
 
 document.getElementById("second").addEventListener("click", ()=>{
@@ -322,6 +342,7 @@ document.getElementById("second").addEventListener("click", ()=>{
     Board.showBoard()
     const moves = ["00", "02", "20", "22"]
     Board.makeMove(moves[Math.floor(Math.random()*4)])
+    voicebox.playSpeak()
 })
 
 document.getElementById("replay").addEventListener("click", ()=>{
