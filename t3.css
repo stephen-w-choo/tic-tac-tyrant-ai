@@ -13,32 +13,43 @@ body {
     height: 100vh;
     color: white;
     font-family: monospace;
+    font-size: 1rem;
     text-shadow: 0 0 5px #C8C8C8;
+    margin: 0px;
+    padding: 0px;
   }
 
 pre {
-    font-size: 4.5px;
+    font-size: 4px;
     text-align: center;
 }
 
 #scanline-overlay {
     background: repeating-linear-gradient(transparent, transparent 3px, black 4px, black 4px);
-    position: fixed;
-    bottom: 0;
-    right: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     pointer-events: none; 
+    margin: 0px;
+    padding: 0px;
 }
 
 #chatbox {
+    display: flex;
     width: 450px;
     margin: 0 auto;
-    background-color:rgba(0,0,0,0.5);
+    background-color:rgba(0,0,0,0.6);
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 20px;
-    padding: 10px;
+    padding: 5px;
+}
+
+#chatbox>div {
+    margin-top: 5px;
+    margin-left: 20px;
 }
 
 #square {
@@ -56,10 +67,11 @@ pre {
     width: 450px;
     position: absolute;
     z-index: 1;
-    background-color:rgba(0,0,0,0.5);
+    background-color:rgba(0,0,0,0.85);
 }
 
 #outcome-overlay > * {
+    font-size: 40px;
     margin: 0 auto;
     text-align: center;
 }
@@ -75,11 +87,12 @@ pre {
 
 #game-menu>* {
     border-radius: 10px;
-    background-color:rgba(0,0,0,0.3);
+    background-color:rgba(0,0,0,0.5);
     height: 160px;
     width: 160px;
     margin: 0px;
     padding: 0px;
+    cursor: pointer; 
 }
 
 #game-menu>*>p {
@@ -106,11 +119,16 @@ pre {
 }
 
 .cell{
-    font-size: 50px;
+    font-size: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-color: white;
     border-style: solid;
     border-width: 1px;
+}
+
+.hover:hover{
+    background-color: rgba(0,0,0,0.5);
+    cursor: pointer; 
 }
