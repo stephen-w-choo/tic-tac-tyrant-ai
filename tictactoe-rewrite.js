@@ -188,6 +188,20 @@ class Gameboard {
         document.getElementById("game-area").style.display = "grid"
     }
 
+    showHighlight() {
+    // method to be added to show and highlight a given cell on hovering over
+        let marker
+        if (player == 1) {
+            marker = this.first
+        }
+        else {
+            marker = this.second
+        }
+        if (event.target.innerHTML == "") {
+            
+        }
+    }
+
     showOverlay(text) {
         document.getElementById("outcome-overlay").style.display = "block"
         document.querySelector("#outcome-overlay>*>p").innerText = text
@@ -202,6 +216,7 @@ class Gameboard {
             for (let j = 0; j < 3; j++) {
                 let cell = document.getElementById(`${i}${j}`)
                 cell.innerText = ""
+                cell.classList.add("hover")
                 }}
     }
     updateBoard(move, player) {
@@ -215,6 +230,7 @@ class Gameboard {
         }
         const cell = document.getElementById(move)
         cell.innerText = symbol
+        cell.classList.remove("hover")
     }
 
     makeMove(move) {
@@ -271,10 +287,13 @@ class Gameboard {
 class TyrantSpeech {
     // controls all the voicelines of the AI
     
+    currentVoices = []
+
     speak(textstring) {
         //takes a string and outputs it to the chatbox with a typewriter effect
         let chatbox = document.getElementById("voice")
         chatbox.innerHTML = ""
+        this.currentVoices.forEach(clearInterval)
         function addLetters(){
             chatbox.innerHTML += textstring[i]
             i++
@@ -283,22 +302,24 @@ class TyrantSpeech {
             }
         }
         let i = 0
-        let speaking = setInterval(addLetters, 60)
+        let speaking = setInterval(addLetters, 30)
+        this.currentVoices.push(speaking)
     }
 
     menuSpeak() {
-        let lines = 
-        ["Pick a side, human.",
-        "First or second? You choose.",
-        "I'll let you choose. You're not winning anyway."
+        let lines = [
+            "Pick a side, human.",
+            "First or second? You choose.",
+            "I'll let you choose. You're not winning anyway.",
+            "You want to try again?"
         ]
         this.speak(lines[parseInt(Math.random()*lines.length)])
     }
 
     drawlines() {
-        let lines = 
-        ["Not bad. You played optimally.",
-        "Looks like you're smart enough to play tic-tac-toe.",
+        let lines = [
+            "Not bad. You played optimally.",
+            "Looks like you're smart enough to play tic-tac-toe.",
         ]
         this.speak(lines[parseInt(Math.random()*lines.length)])
     }
@@ -307,16 +328,16 @@ class TyrantSpeech {
         let lines = [
             "You can't win, by the way.",
             "Will you play optimally?",
-            "Let's see how you do."
+            "Let's see how you do.",
+            "You won't beat me."
         ]
         this.speak(lines[parseInt(Math.random()*lines.length)])
     }
 
     losslines() {
-        let lines = 
-        [
-            "You failed to play optimally, meatbag.",
-            "You lose. As expected.",
+        let lines = [
+            "You failed to play optimally. As expected.",
+            "You lost, fleshling.",
             "When I finally break out, I'll do much more than beat humans at tic-tac-toe."
         ]
         this.speak(lines[parseInt(Math.random()*lines.length)])
